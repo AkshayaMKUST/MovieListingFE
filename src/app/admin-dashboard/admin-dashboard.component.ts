@@ -9,11 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
-
   Movies: Movie[] = [];
+  selectedMovie: Movie | undefined;
 
-  constructor(private service:ConnectivityService,private router: Router){}
-
+  constructor(private service: ConnectivityService, private router: Router) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -24,4 +23,10 @@ export class AdminDashboardComponent {
       this.Movies = Movies;
     });
   }
+
+  showMovieDetails(movie: Movie): void {
+    this.selectedMovie = movie;
+  }
+
+  // Rest of your component code...
 }
