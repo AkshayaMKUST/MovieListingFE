@@ -246,7 +246,7 @@
             <button class="btn btn-outline-danger" data-bs-toggle="modal"
               data-bs-target="#updatemovieModal">Update Movie</button>
             &nbsp;
-            <button class="btn btn-outline-secondary">Delete Movie</button>
+            <button class="btn btn-outline-secondary" *ngIf="selectedMovie?.movieId !== undefined" (click)="deleteProduct(selectedMovie?.movieId)">Delete Movie</button>
           </div>
         </div>
       </div>

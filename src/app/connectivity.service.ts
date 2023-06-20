@@ -14,4 +14,10 @@ export class ConnectivityService {
     return this.http.get<Movie[]>("http://localhost:8083/1.0/admin/viewAllMovies");
   }
 
+  deleteProductById(id: number): Observable<string> {
+    const url = `http://localhost:8083/1.0/admin/deleteAMovie/${id}`;
+    
+    return this.http.delete<string>(url, { responseType: 'text' as 'json' });
+  }
+
 }

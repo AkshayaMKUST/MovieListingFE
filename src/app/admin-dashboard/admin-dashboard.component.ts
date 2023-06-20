@@ -28,5 +28,17 @@ export class AdminDashboardComponent {
     this.selectedMovie = movie;
   }
 
+  deleteProduct(movieId: number): void {
+    const confirmDelete = confirm('Are you sure you want to delete this movie?');
+    if (confirmDelete) {
+      this.service.deleteProductById(movieId).subscribe(() => {
+        console.log('Movie deleted successfully');
+        this.getMovies();
+        alert('Movie deleted successfully');
+        this.router.navigate(['retrieve']);
+      });
+    }
+  }
+
   // Rest of your component code...
 }
