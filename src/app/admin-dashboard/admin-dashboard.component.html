@@ -202,18 +202,18 @@
     <!-- Movie Cards -->
     <div class="container" style="background-color: black;">
         <div class="row">
-            <div class="col-md-3">
+            <div *ngFor="let Movie of Movies" class="col-md-3">
                 <div class="card">
-                    <img src="assets/OIP (1).jpg" class="card-img-top" alt="Movie 1">
+                    <img src="{{ Movie.imageUrl }}" class="card-img-top" alt="Movie 1">
                     <div class="card-body-overlay">
-                        <h5 class="card-title">Jawan</h5>
+                        <h5 class="card-title">{{ Movie.movieName }}</h5>
                         <p class="card-text">Rating: 8.5/10</p>
                         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#movieModal">Read
                             More</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="card">
                     <img src="assets/OIP (2).jpg" class="card-img-top" alt="Movie 2">
                     <div class="card-body-overlay">
@@ -273,8 +273,8 @@
                         <button class="btn btn-danger">Read More</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
+            </div> -->
+            <!-- <div class="col-md-3">
                 <div class="card">
                     <img src="assets/pathaan.jpg" class="card-img-top" alt="Movie 4">
                     <div class="card-body-overlay">
@@ -283,7 +283,7 @@
                         <button class="btn btn-danger">Read More</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

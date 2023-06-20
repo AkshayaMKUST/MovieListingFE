@@ -11,6 +11,8 @@ import { UserMovieComponentComponent } from './user-movie-component/user-movie-c
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminMovieComponentComponent } from './admin-movie-component/admin-movie-component.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
