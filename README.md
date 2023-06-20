@@ -1,1 +1,1 @@
-# MovieListingFE
+# movie-listing-demo-fe
