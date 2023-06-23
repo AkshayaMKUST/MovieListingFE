@@ -1,21 +1,39 @@
-.movie-poster {
-    position: relative;
-    background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2019/03/spiderman_into_the_spiderverse-5.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 800px;
-    filter: blur(8px);
-  }
- 
-  .star {
-    cursor: pointer;
-  }
+.container{
   
-  .star:hover,
-  .star.active {
-    color: rgb(255, 213, 0);
-  }
+}
+.card {
+  background: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+}
+
+.card-img {
+  margin-top: 30px;
+  width: 290px;
+  height: 400px;
+}
 
 
-  
+.card-body{
+  margin-left: 50px;
+}
+.ratings{
+
+      border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.product-rating{
+
+  font-size: 50px;
+}
+
+.stars i{
+
+  font-size: 18px;
+  color: #28a745;
+}
+
+.rating-text{
+  margin-top: 10px;
+}

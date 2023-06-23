@@ -14,56 +14,58 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+
 </head>
-<body>
-
-
+<body style="background-color: black;">
   <div class="container">
-    <h2>Add Rating and Review</h2>
-    <form>
-      <div class="form-group">
-        <label for="rating">Rating:</label>
-        <input type="number" class="form-control" id="rating" min="1" max="10" placeholder="Enter rating (1-10)" oninput="updateStars()">
+    <div class="row">
+      <div class="col-xl-3">
+        <img class="card-img-top" style=" width: 290px; height: 400px;" src="assets/OIP (1).jpg" alt="Movie Poster">
       </div>
-      <div class="form-group">
-        <label for="stars">Stars:</label>
-        <div id="stars">
-          <i class="star bi bi-star" data-index="0"></i>
-          <i class="star bi bi-star" data-index="1"></i>
-          <i class="star bi bi-star" data-index="2"></i>
-          <i class="star bi bi-star" data-index="3"></i>
-          <i class="star bi bi-star" data-index="4"></i>
-          <i class="star bi bi-star" data-index="5"></i>
-          <i class="star bi bi-star" data-index="6"></i>
-          <i class="star bi bi-star" data-index="7"></i>
-          <i class="star bi bi-star" data-index="8"></i>
-          <i class="star bi bi-star" data-index="9"></i>
+      <div class="col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="card-title">Movie Title</h5>
+                <p class="card-text">Movie Description</p>
+              </div>
+              <div class="col-6 rating">
+                <div class="ratings">
+                  <span class="product-rating">4.6</span><span>/5</span>
+                  <div class="stars">
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                  </div>
+                  
+              </div>
+                <!-- Add the rest of the star rating inputs and labels here -->
+              </div>
+              <div class="col-12">
+                <h6 class="card-subtitle mt-4">Post a Review:</h6>
+                <textarea class="form-control" rows="4"></textarea>
+                <button class="btn btn-primary mt-2">Submit Review</button>
+              </div>
+              <!-- <div class="col-12">
+                <p id="ratingValue">Rating: 0.0/10</p>
+              </div> -->
+            </div>
+          </div>
         </div>
       </div>
-      <div class="form-group">
-        <label for="review">Review:</label>
-        <textarea class="form-control" id="review" rows="4" placeholder="Write your review..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
   </div>
-  <script>
-  function updateStars() {
-    const rating = document.getElementById('rating').value;
-    const stars = document.getElementsByClassName('star');
 
-    for (let i = 0; i < stars.length; i++) {
-      if (i < rating) {
-        stars[i].classList.add('active');
-      } else {
-        stars[i].classList.remove('active');
-      }
-    }
-  }
-</script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-</script>
+
+
+
+  
+  
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
