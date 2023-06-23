@@ -64,78 +64,138 @@
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
         crossorigin="anonymous"></script>
 
+<!-- addmovie modal -->
+      <!-- <div class="modal fade" id="addmovieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="movieModalLabel">Movie Details</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                          <label for="movieName">Movie Name</label>
+                          <input type="text" class="form-control" id="movieName" placeholder="Enter movie name"
+                          [(ngModel)]="movietwo.movieName"  data-animation="grow">
+                      </div>
+                      <div class="form-group">
+                          <label for="movieName">Director</label>
+                          <input type="text" class="form-control" id="director" placeholder="Enter movie director"
+                          [(ngModel)]="movietwo.movieDirector"  data-animation="grow">
+                      </div>
+                      <div class="form-group">
+                          <label for="genre">Genre</label>
+                          <input type="text" class="form-control" id="genre" placeholder="Enter genre"
+                          [(ngModel)]="movietwo.movieGenre"  data-animation="pulse">
+                      </div>
+                      <div class="form-group">
+                          <label for="duration">Release Date</label>
+                          <input type="text" class="form-control" id="releasedate" placeholder="Enter movie release date"
+                          [(ngModel)]="movietwo.movieReleaseDate"  data-animation="shake">
+                      </div>
+                      <div class="form-group">
+                          <label for="language">Language</label>
+                          <input type="text" class="form-control" id="language" placeholder="Enter language"
+                          [(ngModel)]="movietwo.movieLanguage"  data-animation="flash">
+                      </div>
+                      <div class="form-group">
+                          <label for="duration">Duration</label>
+                          <input type="text" class="form-control" id="duration" placeholder="Enter duration"
+                          [(ngModel)]="movietwo.duration"  data-animation="shake">
+                      </div>
+                      <div class="form-group">
+                          <label for="country">Country</label>
+                          <input type="text" class="form-control" id="country" placeholder="Enter country"
+                          [(ngModel)]="movietwo.country"  data-animation="swing">
+                      </div>
+                      <div class="form-group">
+                          <label for="description">Description</label>
+                          <textarea class="form-control" id="description" rows="3" placeholder="Enter description"
+                          [(ngModel)]="movietwo.description"  data-animation="bounce"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="overallRate">Overall Rate</label>
+                          <input type="number" class="form-control" id="overallRate" placeholder="Enter overall rate"
+                          [(ngModel)]="movietwo.overallRate"  data-animation="rubberBand">
+                      </div>
+                      <div class="form-group">
+                          <label for="moviePoster">Movie Poster</label>
+                          <input type="file" class="form-control-file" id="moviePoster" (change)="onImageFileChange($event)" name="moviePoster">
+                      </div>
+                      <button type="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+                      &nbsp;
+                      <button type="button" class="btn btn-primary" (click)="addMovie()" >Save</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div> -->
 
-
-    <!-- Add Movie Modal -->
-    <div class="modal fade" id="addmovieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="movieModalLabel">Movie Details</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="movieName">Movie Name</label>
-                            <input type="text" class="form-control" id="movieName" placeholder="Enter movie name"
-                                data-animation="grow">
-                        </div>
-                        <div class="form-group">
-                            <label for="movieName">Director</label>
-                            <input type="text" class="form-control" id="director" placeholder="Enter movie director"
-                                data-animation="grow">
-                        </div>
-                        <div class="form-group">
-                            <label for="genre">Genre</label>
-                            <input type="text" class="form-control" id="genre" placeholder="Enter genre"
-                                data-animation="pulse">
-                        </div>
-                        <div class="form-group">
-                            <label for="duration">Release Date</label>
-                            <input type="text" class="form-control" id="releasedate" placeholder="Enter movie release date"
-                                data-animation="shake">
-                        </div>
-                        <div class="form-group">
-                            <label for="language">Language</label>
-                            <input type="text" class="form-control" id="language" placeholder="Enter language"
-                                data-animation="flash">
-                        </div>
-                        <div class="form-group">
-                            <label for="duration">Duration</label>
-                            <input type="text" class="form-control" id="duration" placeholder="Enter duration"
-                                data-animation="shake">
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" placeholder="Enter country"
-                                data-animation="swing">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea class="form-control" id="description" rows="3" placeholder="Enter description"
-                                data-animation="bounce"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="overallRate">Overall Rate</label>
-                            <input type="number" class="form-control" id="overallRate" placeholder="Enter overall rate"
-                                data-animation="rubberBand">
-                        </div>
-                        <div class="form-group">
-                            <label for="moviePoster">Movie Poster</label>
-                            <input type="file" class="form-control-file" id="moviePoster" accept="image/*">
-                        </div>
-                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-                        &nbsp;
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </form>
-                </div>
-            </div>
+  <div class="modal fade" id="addmovieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="movieModalLabel">Movie Details</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="movieName">Movie Name</label>
+              <input type="text" class="form-control" id="movieName" name="movieName" placeholder="Enter movie name" [(ngModel)]="movietwo.movieName" data-animation="grow">
+            </div>
+            <div class="form-group">
+              <label for="director">Director</label>
+              <input type="text" class="form-control" id="director" name="director" placeholder="Enter movie director" [(ngModel)]="movietwo.movieDirector" data-animation="grow">
+            </div>
+            <div class="form-group">
+              <label for="genre">Genre</label>
+              <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter genre" [(ngModel)]="movietwo.movieGenre" data-animation="pulse">
+            </div>
+            <div class="form-group">
+              <label for="releaseDate">Release Date</label>
+              <input type="text" class="form-control" id="releaseDate" name="releaseDate" placeholder="Enter movie release date" [(ngModel)]="movietwo.movieReleaseDate" data-animation="shake">
+            </div>
+            <div class="form-group">
+              <label for="language">Language</label>
+              <input type="text" class="form-control" id="language" name="language" placeholder="Enter language" [(ngModel)]="movietwo.movieLanguage" data-animation="flash">
+            </div>
+            <div class="form-group">
+              <label for="duration">Duration</label>
+              <input type="text" class="form-control" id="duration" name="duration" placeholder="Enter duration" [(ngModel)]="movietwo.duration" data-animation="shake">
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" class="form-control" id="country" name="country" placeholder="Enter country" [(ngModel)]="movietwo.country" data-animation="swing">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description" [(ngModel)]="movietwo.description" data-animation="bounce"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="overallRate">Overall Rate</label>
+              <input type="number" class="form-control" id="overallRate" name="overallRate" placeholder="Enter overall rate" [(ngModel)]="movietwo.overallRate" data-animation="rubberBand">
+            </div>
+            <div class="form-group">
+              <label for="moviePoster">Movie Poster</label>
+              <input type="file" class="form-control-file" id="moviePoster" (change)="onImageFileChange($event)" name="moviePoster">
+            </div>
+            <button type="reset" class="btn btn-secondary" data-dismiss="modal" (click)="resetForm()">Reset</button>
+            &nbsp;
+            <button type="button" class="btn btn-primary" (click)="addMovie()">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+  
+      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script>
@@ -202,136 +262,60 @@
     <!-- Movie Cards -->
     <div class="container" style="background-color: black;">
         <div class="row">
-            <div class="col-md-3">
+            <div *ngFor="let Movie of Movies" class="col-md-3">
                 <div class="card">
-                    <img src="assets/OIP (1).jpg" class="card-img-top" alt="Movie 1">
+                    <img src="{{ Movie.imageUrl }}" class="card-img-top" alt="Movie 1">
                     <div class="card-body-overlay">
-                        <h5 class="card-title">Jawan</h5>
-                        <p class="card-text">Rating: 8.5/10</p>
-                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#movieModal">Read
+                        <h5 class="card-title">{{ Movie.movieName }}</h5>
+                        <p class="card-text">{{ Movie.overallRate }}</p>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#movieModal"  (click)="showMovieDetails(Movie)">Read
                             More</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/OIP (2).jpg" class="card-img-top" alt="Movie 2">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">John Wick Chapter 4</h5>
-                        <p class="card-text">Rating: 7.9/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/OIP (3).jpg" class="card-img-top" alt="Movie 3">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">Evil Dead Rise</h5>
-                        <p class="card-text">Rating: 9.2/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/OIP (4).jpg" class="card-img-top" alt="Movie 4">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">Romancham</h5>
-                        <p class="card-text">Rating: 8.0/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
-             
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/OIP.jpg" class="card-img-top" alt="Movie 4">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">Avatar - The Way of Water</h5>
-                        <p class="card-text">Rating: 8.0/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/2018movie.jpg" class="card-img-top" alt="Movie 4">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">2018</h5>
-                        <p class="card-text">Rating: 8.4/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/guardians.png" class="card-img-top" alt="Movie 4">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">Guardians of the Galaxy Vol3</h5>
-                        <p class="card-text">Rating: 8.3/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/pathaan.jpg" class="card-img-top" alt="Movie 4">
-                    <div class="card-body-overlay">
-                        <h5 class="card-title">Pathaan</h5>
-                        <p class="card-text">Rating: 8.7/10</p>
-                        <button class="btn btn-danger">Read More</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-
-
-    <!-- Movie Description Modal -->
     <div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="movieModalLabel">JAWAN</h3>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="assets/OIP (1).jpg" class="img-fluid" alt="Movie Poster">
-                        </div>
-                        <div class="col-md-6">
-                            <p>Description: Movie Description</p>
-                            <p>Director: Director Name</p>
-                            <p>Genre: Action</p>
-                            <p>Duration: 2h 30m</p>
-                            <p>Language: English</p>
-                            <div class="d-flex align-items-center">
-                                <span class="mr-2">Rating: 8.5/10</span>
-                                <span class="rating-stars">&#9733;</span>
-                            </div>
-                            <!-- <textarea class="form-control review-textarea mt-3" placeholder="Write your review"></textarea>
-            <button class="btn btn-"></button> -->
-                            <br>
-                            <hr>
-                            <button class="btn btn-outline-danger" data-bs-toggle="modal"
-                                data-bs-target="#updatemovieModal">Update Movie</button>
-                            &nbsp;
-                            <button class="btn btn-outline-secondary">Delete Movie</button>
-                        </div>
-                    </div>
-                </div>
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="movieModalLabel">{{ selectedMovie?.movieName }}</h3>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{{ selectedMovie?.imageUrl }}" class="img-fluid" alt="Movie Poster" >
+          </div>
+          <div class="col-md-6">
+            <p>Description: {{ selectedMovie?.description }}</p>
+            <p>Director: {{ selectedMovie?.movieDirector }}</p>
+            <p>Genre: {{ selectedMovie?.movieGenre }}</p>
+            <p>Duration: {{ selectedMovie?.duration }}</p>
+            <p>Language: {{ selectedMovie?.movieLanguage }}</p>
+            <div class="d-flex align-items-center">
+              <span class="mr-2">Rating: {{ selectedMovie?.overallRate }}/10</span>
+              <span class="rating-stars">&#9733;</span>
             </div>
+            <br>
+            <hr>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal"
+              data-bs-target="#updatemovieModal">Update Movie</button>
+            &nbsp;
+            <button class="btn btn-outline-secondary" *ngIf="selectedMovie?.movieId !== undefined" (click)="deleteProduct(selectedMovie?.movieId)">Delete Movie</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
     <!-- Update Movie Modal -->
-    <div class="modal fade" id="updatemovieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
+    <!-- <div class="modal fade" id="updatemovieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -399,7 +383,78 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <div class="modal fade" id="updatemovieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="movieModalLabel">Update Movie Details</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="movieName">Movie Name</label>
+            <input type="text" class="form-control" id="movieName" placeholder="Enter movie name"
+                   data-animation="grow" [value]="selectedMovie?.movieName || ''">
+          </div>
+          <div class="form-group">
+            <label for="director">Director</label>
+            <input type="text" class="form-control" id="director" placeholder="Enter movie director"
+                   data-animation="grow" [value]="selectedMovie?.movieDirector || ''">
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" class="form-control" id="genre" placeholder="Enter genre"
+                   data-animation="pulse" [value]="selectedMovie?.movieGenre || ''">
+          </div>
+          <div class="form-group">
+            <label for="releasedate">Release Date</label>
+            <input type="text" class="form-control" id="releasedate" placeholder="Enter movie release date"
+                   data-animation="shake" [value]="selectedMovie?.movieReleaseDate || ''">
+          </div>
+          <div class="form-group">
+            <label for="language">Language</label>
+            <input type="text" class="form-control" id="language" placeholder="Enter language"
+                   data-animation="flash" [value]="selectedMovie?.movieLanguage || ''">
+          </div>
+          <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text" class="form-control" id="duration" placeholder="Enter duration"
+                   data-animation="shake" [value]="selectedMovie?.duration || ''">
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" class="form-control" id="country" placeholder="Enter country"
+                   data-animation="swing" [value]="selectedMovie?.country || ''">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="3" placeholder="Enter description"
+                      data-animation="bounce">{{ selectedMovie?.description || '' }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="overallRate">Overall Rate</label>
+            <input type="number" class="form-control" id="overallRate" placeholder="Enter overall rate"
+                   data-animation="rubberBand" [value]="selectedMovie?.overallRate || ''">
+          </div>
+          <div class="form-group">
+            <label for="moviePoster">Movie Poster</label>
+            <input type="file" class="form-control-file" id="moviePoster" accept="image/*">
+          </div>
+          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+          &nbsp;
+          <button type="button" class="btn btn-primary">Save</button>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
     </script>
@@ -431,3 +486,44 @@
 </body>
 
 </html>
+
+
+
+ <!-- Movie Description Modal -->
+    <!-- <div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="movieModalLabel">JAWAN</h3>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="assets/OIP (1).jpg" class="img-fluid" alt="Movie Poster">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Description: desc</p>
+                            <p>Director: Director Name</p>
+                            <p>Genre: Action</p>
+                            <p>Duration: 2h 30m</p>
+                            <p>Language: English</p>
+                            <div class="d-flex align-items-center">
+                                <span class="mr-2">Rating: 8.5/10</span>
+                                <span class="rating-stars">&#9733;</span>
+                            </div>
+                            <br>
+                            <hr>
+                            <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#updatemovieModal">Update Movie</button>
+                            &nbsp;
+                            <button class="btn btn-outline-secondary">Delete Movie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
