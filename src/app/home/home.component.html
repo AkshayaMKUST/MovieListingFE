@@ -27,102 +27,120 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <form class="form-inline my-2 my-lg-0">
-              <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search by movie name" aria-label="Search"
-                  id="searchInput">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                </div>
-              </div>
-            </form>
+            
           </li>
           <li class="dropdown">
-            <a class="dropdown-toggle btn " href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown"
+            <!-- <a class="dropdown-toggle btn " href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
             </a>
             <div class="dropdown-menu" aria-labelledby="searchDropdown">
-              <a class="dropdown-item" href="#" onclick="changePlaceholder('Search by movie name',event)">Search by
+              <a class="dropdown-item" href="#" onclick="changePlaceholder('search-by-date',event)">Search by
                 movie name</a>
-              <a class="dropdown-item" href="#" onclick="changePlaceholder('Search by movie date'),event">Search by
+              <a class="dropdown-item" href="#" onclick="changePlaceholder('#search-by-name'),event">Search by
                 movie date</a>
+            </div> -->
+              <div class="input-group">
+                <select [(ngModel)]="selectedOption" (ngModelChange)="onSelectedOptionChange()">
+                  <option class="form-control" value="name">Name</option>
+                  <option class="form-control" value="date">Date</option>
+                </select>
+                <input [(ngModel)]="searchValue" class="form-control" [placeholder]="searchPlaceholder" (keyup.enter)="search()" />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-light" type="submit" (click)="search()"><i class="bi bi-search"></i></button>
+                </div>
+          
             </div>
           </li>
+          &nbsp;&nbsp;
           <li class="nav-item">
-            <button class="btn btn-outline-dark" (click)="authenticate()" data-bs-toggle="modal" data-bs-target="#loginmodal">
-              <a class="nav-link" >LOGIN / SIGNUP</a>
+            <button class="btn btn-outline-danger" (click)="authenticate()" data-bs-toggle="modal"
+              data-bs-target="#loginmodal">
+              <a class="nav-link">LOGIN / SIGNUP</a>
             </button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <script>
+    $(document).ready(function () {
+      $('#search-by-date').on('click', function (event) {
+        event.preventDefault();
+        $('.search-input').attr('placeholder', 'Search movie by Date');
+        $('#dropdownMenuButton').text('Date');
+      });
+      $('#search-by-name').on('click', function (event) {
+        event.preventDefault();
+        $('.search-input').attr('placeholder', 'Search movie by Name');
+        $('#dropdownMenuButton').text('Name');
+      });
+    });
 
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
     integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
     crossorigin="anonymous"></script>
 
 
-    <div class="modal" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="login-wrap">
-              <div class="login-html">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
-                  In</label>
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                <div class="login-form">
-                  <div class="sign-in-htm">
+  <div class="modal" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="login-wrap">
+            <div class="login-html">
+              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
+                In</label>
+              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+              <div class="login-form">
+                <div class="sign-in-htm">
+                  <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input">
+                  </div>
+                  <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                  </div>
+                  <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                  </div>
+                  <div class="group">
                     <div class="group">
-                      <label for="user" class="label">Username</label>
-                      <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group">
-                      <label for="pass" class="label">Password</label>
-                      <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                      <input id="check" type="checkbox" class="check" checked>
-                      <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                    </div>
-                    <div class="group">
-                      <div class="group">
-                        <input type="submit" class="button" value="Sign In">
-                      </div>
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                      <a href="#forgot">Forgot Password?</a>
+                      <input type="submit" class="button" value="Sign In">
                     </div>
                   </div>
-                  <div class="sign-up-htm">
-                    <div class="group">
-                      <label for="user" class="label">Username</label>
-                      <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group">
-                      <label for="pass" class="label">Password</label>
-                      <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                      <label for="pass" class="label">Repeat Password</label>
-                      <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                      <label for="pass" class="label">Email Address</label>
-                      <input id="pass" type="text" class="input">
-                    </div>
-                    <div class="group">
-                      <input type="submit" class="button" value="Sign Up">
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                      <label for="tab-1">Already Member?</label>
-                    </div>
+                  <div class="hr"></div>
+                  <div class="foot-lnk">
+                    <a href="#forgot">Forgot Password?</a>
+                  </div>
+                </div>
+                <div class="sign-up-htm">
+                  <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input">
+                  </div>
+                  <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                  </div>
+                  <div class="group">
+                    <label for="pass" class="label">Repeat Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
+                  </div>
+                  <div class="group">
+                    <label for="pass" class="label">Email Address</label>
+                    <input id="pass" type="text" class="input">
+                  </div>
+                  <div class="group">
+                    <input type="submit" class="button" value="Sign Up">
+                  </div>
+                  <div class="hr"></div>
+                  <div class="foot-lnk">
+                    <label for="tab-1">Already Member?</label>
                   </div>
                 </div>
               </div>
@@ -131,37 +149,38 @@
         </div>
       </div>
     </div>
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-      integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-      crossorigin="anonymous"></script>
-      
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+  </script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256–2z0P7MLoyxByUtvAk/xjkmindefS4auh4Pfzbm7y6g0="
+    crossorigin=”anonymous”>
     </script>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"></script>
-  
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256–2z0P7MLoyxByUtvAk/xjkmindefS4auh4Pfzbm7y6g0="
-      crossorigin=”anonymous”>
-      </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-      window.addEventListener('scroll', function () {
-        var navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('navbar-scrolled', window.scrollY > 0);
-      });
-      function changePlaceholder(placeholder) {
-        document.getElementById('searchInput').placeholder = placeholder;
-      }
-  
-    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      var navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('navbar-scrolled', window.scrollY > 0);
+    });
+    function changePlaceholder(placeholder) {
+      document.getElementById('searchInput').placeholder = placeholder;
+    }
+
+  </script>
 
   <!-- Carousel -->
 
@@ -204,6 +223,9 @@
     </button>
   </div>
 
+  <div style="margin-top: 50px;margin-left: 20px;">
+    <h3><b>TOP MOVIES</b></h3>
+  </div>
 
   <div class="container" style="background-color: black;">
     <div class="row">
@@ -290,7 +312,7 @@
     </div>
   </div>
 
-  
+
   <!-- Movie Modal -->
   <div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="movieModalLabel"
     aria-hidden="true">

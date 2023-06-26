@@ -16,6 +16,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
 
 </head>
+
 <body style="background-color: black;">
   <div class="container">
     <div class="row">
@@ -30,55 +31,113 @@
                 <h5 class="card-title">Movie Title</h5>
                 <p class="card-text">Movie Description</p>
               </div>
-              <div class="col-6 rating">
-                <div class="ratings">
-                  <span class="product-rating">4.6</span><span>/5</span>
-                  <div class="stars">
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                      <i class="bi bi-star"></i>
-                  </div>
-                  
+
+              <div class="col-12">
+                <h6 class="card-subtitle mt-4">Rate the Movie:</h6>
+                <div class="rating">
+                  <input type="radio" id="star1" name="rating" value="1" />
+                  <label for="star1"></label>
+                  <input type="radio" id="star2" name="rating" value="2" />
+                  <label for="star2"></label>
+                  <input type="radio" id="star3" name="rating" value="3" />
+                  <label for="star3"></label>
+                  <input type="radio" id="star4" name="rating" value="4" />
+                  <label for="star4"></label>
+                  <input type="radio" id="star5" name="rating" value="5" />
+                  <label for="star5"></label>
+                  <!-- Add more rating options if desired -->
+                </div>
+                <p id="ratingValue"></p>
               </div>
-                <!-- Add the rest of the star rating inputs and labels here -->
-              </div>
+
               <div class="col-12">
                 <h6 class="card-subtitle mt-4">Post a Review:</h6>
                 <textarea class="form-control" rows="4"></textarea>
                 <button class="btn btn-primary mt-2">Submit Review</button>
               </div>
-              <!-- <div class="col-12">
-                <p id="ratingValue">Rating: 0.0/10</p>
-              </div> -->
+
+              <div class="col-12 user-reviews">
+                <h6 class="card-subtitle mt-4">User Reviews:</h6>
+                <div class="user-review">
+                  <p>User Review 1</p>
+                </div>
+                <div class="user-review">
+                  <p>User Review 2</p>
+                </div>
+                <div class="user-review">
+                  <p>User Review 3</p>
+                </div>
+                <div class="user-review">
+                  <p>User Review 4</p>
+                </div>
+                <div class="user-review">
+                  <p>User Review 5</p>
+                </div>
+                <div class="read-more">
+                  <div class="user-review">
+                    <p>User Review 6</p>
+                  </div>
+                  <div class="user-review">
+                    <p>User Review 7</p>
+                  </div>
+                  <div class="user-review">
+                    <p>User Review 8</p>
+                  </div>
+                  <div class="user-review">
+                    <p>User Review 9</p>
+                  </div>
+                  <div class="user-review">
+                    <p>User Review 10</p>
+                  </div>
+                </div>
+                
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
-  
   
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-  crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"></script>
+  <script>
+    var ratingInputs = document.querySelectorAll('.rating input');
+    var ratingValue = document.getElementById('ratingValue');
 
+    ratingInputs.forEach(function (input) {
+      input.addEventListener('change', function () {
+        var selectedRating = this.value;
+        ratingValue.textContent = 'Your Rating: ' + selectedRating + '/10';
+      });
+    });
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-  crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256–2z0P7MLoyxByUtvAk/xjkmindefS4auh4Pfzbm7y6g0="
-  crossorigin=”anonymous”>
+    readMoreButton.addEventListener('click', function () {
+      readMoreSection.style.display = 'block';
+      readMoreButton.style.display = 'none';
+    });
   </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256–2z0P7MLoyxByUtvAk/xjkmindefS4auh4Pfzbm7y6g0="
+    crossorigin=”anonymous”>
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>

@@ -76,7 +76,6 @@
       color: black;
   }
   .nav-item{
-    margin-top: 5px;
     text-decoration: none;
   }
   
@@ -357,7 +356,7 @@
       backdrop-filter: none;
     }
     .form-control{
-      width: 500px;
+      width: 300px;
       background-color: rgba(204, 199, 199, 0.525);
       color: white;
     }

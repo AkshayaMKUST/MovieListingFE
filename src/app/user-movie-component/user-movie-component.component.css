@@ -17,23 +17,52 @@
 .card-body{
   margin-left: 50px;
 }
-.ratings{
 
-      border: 1px solid rgba(0, 0, 0, 0.1);
-
+.rating {
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  cursor: pointer;
 }
 
-.product-rating{
-
-  font-size: 50px;
+.rating input {
+  position: absolute;
+  left: -9999px;
 }
 
-.stars i{
-
-  font-size: 18px;
-  color: #28a745;
+.rating label {
+  display: inline-block;
+  font-size: 24px;
+  color: #ccc;
+  margin-right: 5px;
 }
 
-.rating-text{
+.rating label:before {
+  content: '\2605'; /* Star icon */
+}
+
+.rating input:checked ~ label {
+  color: #ffd700; /* Gold color */
+}
+
+#displayRating {
+  font-size: 24px;
+  margin-top: 10px;
+}
+.user-reviews {
+  margin-top: 20px;
+}
+
+.user-review {
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: none;
+  margin-top: 10px;
+}
+
+.show-more-reviews {
+  display: none;
   margin-top: 10px;
 }
